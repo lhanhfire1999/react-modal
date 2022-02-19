@@ -1,0 +1,68 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: rgba(#000, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  overflow: auto;
+
+  transition: 0.3s ease-in-out;
+  display: flex;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    // position: relative;
+    width: 500px;
+    margin: auto;
+    border-radius: 4px;
+
+    background-color: #fff;
+    transition: inherit;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100px);
+
+    // if parent not use flex
+    // top: 50%;
+    // margin: 0 auto;
+    // transform: translateY(-100px);
+  }
+
+  &.active &__content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &__header,
+  &__body,
+  &__footer {
+    padding: 16px 20px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+
+    font-size: 24px;
+    font-weight: 600;
+    padding: 0 12px;
+    color: #7f7f7f;
+    cursor: pointer;
+  }
+
+  &__close:hover {
+    color: #000;
+  }
+}
