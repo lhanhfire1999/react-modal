@@ -16,7 +16,7 @@ const Modal = (props) => {
     return () => {
       window.removeEventListener('click', clickOutsideContent);
     };
-  }, [show]);
+  }, [show, onHideModal]);
 
   return (
     <div
